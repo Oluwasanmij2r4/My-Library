@@ -26,6 +26,7 @@ body{
 .header h1{
     font-family: 'Sigmar', serif;
     font-size: 2em;
+    text-shadow: 4px 4px 2px #996600a2, -4px -4px 2px #996600a2;
 }
 
 .header button{
@@ -36,10 +37,43 @@ body{
     border: 3px solid #996600;
     color: black;
     border-radius: 1em;
+    transition: transform 500ms;
 }
 
 .header button:hover{
     background-color: #996600;
     color: white;
     border: 3px solid white;
+    cursor: pointer;
+    transform: translateY(-0.25em);
+    transition: transform 250ms;
+}
+
+.moving-not{
+    background-color: rgba(53, 165, 146, 0.123);
+    padding: 8px;
+    border-top: 1px solid rgba(41, 39, 39, 0.11);
+    border-bottom: 1px solid white;
+    color: rgba(255, 255, 255, 0.884);
+    font-size: 1.25em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.moving-not p{
+    animation: movingText 12s linear 10ms infinite normal;
+}
+
+.moving-not p:hover{
+    animation-play-state: paused;
+}
+
+@keyframes movingText{
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
