@@ -64,8 +64,78 @@ body{
     animation: movingText 12s linear 10ms infinite normal;
 }
 
-.moving-not p:hover{
-    animation-play-state: paused;
+form{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+fieldset{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.144);
+    width: 50%;
+    margin: 0 auto;
+    height: 60vh;
+}
+
+fieldset h1 {
+    background-image: url('/img/lib2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    text-shadow: 4px 5px 5px #996600, -4px -5px 5px #996600;
+}
+
+fieldset input{
+    width: 100%;
+    padding: 1.25em;
+    margin: 1em 0;
+}
+
+fieldset input::placeholder, fieldset label{
+    color: black;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+fieldset select{
+    width: 100%;
+    padding: .5em;
+}
+
+.dropdown{
+    display: flex;
+    gap: .75em;
+}
+
+.pop-up{
+    padding: 1em;
+}
+
+.buton{
+display: flex;
+justify-content: flex-end;
+margin: 1em 0;
+gap: 1em;
+}
+
+.btn{
+    font-size: 1em;
+    padding: 1em;
+    background-color: white;
+    font-weight: 600;
+    border: 3px solid #996600;
+    color: black;
+    border-radius: 1em;
+}
+
+.btn:hover{
+    background-color: #996600;
+    color: white;
+    border: 3px solid white;
+    cursor: pointer;
 }
 
 @keyframes movingText{
