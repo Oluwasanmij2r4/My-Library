@@ -1,57 +1,77 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/library-svgrepo-com.svg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/library-svgrepo-com.svg" />
     <title>My Library</title>
 
-    <link rel="stylesheet" href="./style/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
     <div class="header">
-        <div>
-            <h1>My Library</h1>
-        </div>
+      <div>
+        <h1>My Library</h1>
+      </div>
 
-        <div><button>
-            Add Book
-        </button></div>
+      <div>
+        <button class="addbtn">Add Book</button>
+      </div>
     </div>
     <div class="moving-not">
-        <p>Click the Add Book button to add your book to the collection !!</p>
+      <p>Click the Add Book button to add your book to the collection !!</p>
     </div>
 
     <div>
-        <form action="#" method="get">
-            <fieldset>
-                <h1>Add a Book</h1>
+      <form action="#" method="get">
+        <fieldset>
+          <h1>Add a Book</h1>
 
-                <div class="pop-up">
-                    <div>
-                        <input type="text" name="name" id="author" placeholder="Author" required>
-                    </div>
-                    <div>
-                        <input type="text" name="title" id="title" placeholder="Title" required>
-                    </div>
-                    <div>
-                        <input type="text" name="pages" id="pages" placeholder="Pages" required>
-                    </div>
-                    
-                    <div class="dropdown">
-                        <label for="hasRead"> Status: </label>
-                        <select name="hasRead" id="status">
-                                <option value="Read">Read</option>
-                                <option value="Not Read">Not read</option>
-                        </select>
-                    </div>
-                    <div class="buton">
-                        <button type="button" class="btn">Add Book</button>
-                        <button class="btn">Cancel</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+          <div class="pop-up">
+            <div>
+              <input
+                type="text"
+                name="name"
+                id="author"
+                placeholder="Author"
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="pages"
+                id="pages"
+                placeholder="Pages"
+                required
+              />
+            </div>
+
+            <div class="dropdown">
+              <label for="hasRead"> Status: </label>
+              <select name="hasRead" id="status">
+                <option value="Read">Read</option>
+                <option value="Not Read">Not read</option>
+              </select>
+            </div>
+            <div class="buton">
+              <button type="button" class="btn">Add Book</button>
+              <button class="btn cancel">Cancel</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
     </div>
-    
-</body>
+
+
+    <script src="/JS/main.js"></script>
+  </body>
 </html>
