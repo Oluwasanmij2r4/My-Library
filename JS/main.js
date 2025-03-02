@@ -6,14 +6,17 @@ const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const statusInput = document.querySelector("#status");
 const addButton = document.querySelector("#addBtn");
+const container = document.querySelector(".container");
 
 popBtn.addEventListener("click", () => {
     popUp.classList.add('active')
     popUp.classList.add('blur');
+    container.style.display = "none";
 });
 
 cancel.addEventListener("click", () => {
     popUp.classList.remove('active')
+    container.style.display = "block";
 })
 
 const myLibrary = [];
@@ -44,7 +47,6 @@ createBook("To Kill a Mockingbird", "Harper Lee", 281, true);
 // display book function
 
 const displayBook = () => {
-    const container = document.querySelector('.container')
     container.innerHTML = '';
 
     for(let i = 0; i < myLibrary.length; i++){
