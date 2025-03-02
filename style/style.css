@@ -228,7 +228,7 @@ gap: 1em;
 
 @keyframes movingText{
     from {
-        transform: translateX(100%);
+        transform: translateX(100vw);
     }
 
     to {
