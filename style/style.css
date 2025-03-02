@@ -75,7 +75,8 @@ form{
 
 fieldset{
     border: none;
-    background-color: rgba(255, 255, 255, 0.144);
+    /* background-color: rgba(255, 255, 255, 0.144); */
+    background-color: rgba(255, 255, 255, 0.89);
     width: 80%;
     margin: 0 auto;
     height: 52vh;
@@ -95,6 +96,8 @@ fieldset input{
     width: 100%;
     padding: 1.25em;
     margin: 1em 0;
+    background-color: rgba(153, 150, 150, 0.945);
+    border: 2px solid rgba(153, 150, 150, 0.945);
 }
 
 fieldset input::placeholder, fieldset label{
@@ -108,6 +111,8 @@ fieldset select{
     padding: .5em;
     font-size: 1em;
     font-weight: 600;
+    background-color: rgba(153, 150, 150, 0.945);
+    border: 2px solid rgba(153, 150, 150, 0.945);
 }
 
 .dropdown{
@@ -237,7 +242,22 @@ gap: 1em;
 }
 
 
+@media (max-width:400px) {
+    div.moving-not{
+        font-size: .5em;
+    }
+}
+
+
 @media (max-width:550px) {
+    .header h1{
+        font-size: 1em;
+    }
+
+    .header button{
+        font-size: .5em;
+    }
+    
     div.moving-not{
         font-size: 1em;
     }
