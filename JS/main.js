@@ -53,10 +53,13 @@ const displayBook = () => {
         const author = document.createElement('p')
         const pages = document.createElement("p");
         const status = document.createElement("p");
+        const delCont = document.createElement('div')
         const delbtn = document.createElement('button')
 
         card.classList.add('book-card')
+        delCont.classList.add('del-cont')
         delbtn.classList.add('del-btn')
+
 
         title.textContent = `Title: ${myLibrary[i].title}`
         author.textContent = `Author: ${myLibrary[i].author}`;
@@ -69,11 +72,14 @@ const displayBook = () => {
             displayBook();
         });
 
+
+        delCont.appendChild(delbtn)
+
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
         card.appendChild(status);
-        card.appendChild(delbtn);
+        card.appendChild(delCont);
 
         container.appendChild(card)
     }
@@ -96,4 +102,16 @@ addButton.addEventListener('click', () => {
     displayBook();
 
     popUp.classList.remove("active");
+});
+
+
+window.addEventListener("scroll", function () {
+  const stickyElement = document.querySelector(".moving-not");
+  const rect = stickyElement.getBoundingClientRect(); 
+
+  if (rect.top <= 0) {
+    stickyElement.style.backgroundColor = "black"; // Change color when sticky
+  } else {
+    stickyElement.style.backgroundColor = "#99660025"; // Default color
+  }
 });
