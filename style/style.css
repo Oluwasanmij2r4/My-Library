@@ -82,7 +82,7 @@ fieldset{
 }
 
 fieldset h1 {
-    background-image: url('/img/lib2.jpg');
+    background-image: url("../img/lib2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1em;
