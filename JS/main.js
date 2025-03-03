@@ -16,7 +16,7 @@ popBtn.addEventListener("click", () => {
 
 cancel.addEventListener("click", () => {
     popUp.classList.remove('active')
-    container.style.display = "block";
+    container.style.display = "grid";
 })
 
 const myLibrary = [];
@@ -104,6 +104,7 @@ addButton.addEventListener('click', () => {
     displayBook();
 
     popUp.classList.remove("active");
+    container.style.display = "grid";
 });
 
 
