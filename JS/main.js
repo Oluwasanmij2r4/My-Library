@@ -7,6 +7,7 @@ const pagesInput = document.querySelector("#pages");
 const statusInput = document.querySelector("#status");
 const addButton = document.querySelector("#addBtn");
 const container = document.querySelector(".container");
+let editIndex = null;
 
 popBtn.addEventListener("click", () => {
     popUp.classList.add('active')
@@ -15,7 +16,7 @@ popBtn.addEventListener("click", () => {
 });
 
 cancel.addEventListener("click", () => {
-    popUp.classList.remove('active')
+    popUp.classList.remove('active');
     container.style.display = "grid";
 })
 
@@ -75,6 +76,9 @@ const displayBook = () => {
             displayBook();
         });
 
+        edit.addEventListener("click", () => {
+          editBook(i);
+        });
 
         delCont.appendChild(edit);
         delCont.appendChild(del);
@@ -103,12 +107,50 @@ addButton.addEventListener('click', () => {
     const booleonStatus = status === 'Read';
 
 
-    createBook(title, author, pages, booleonStatus);
+    if(editIndex !==null){
+        myLibrary[editIndex].title = title;
+        myLibrary[editIndex].author = author;
+        myLibrary[editIndex].pages = pages;
+        myLibrary[editIndex].status = booleonStatus;
+
+        editIndex = null;
+        titleInput.value = '';
+        authorInput.value = '';
+        pagesInput.value = '';
+        statusInput.value = 'Read';
+        addButton.textContent = "Add Book";
+
+    } else {
+        createBook(title, author, pages, booleonStatus);
+    }
+
+    
     displayBook();
 
     popUp.classList.remove("active");
     container.style.display = "grid";
 });
+
+// Function to edit book
+
+const editBook = (index) => {
+    const book = myLibrary[index];
+
+    titleInput.value = book.title;
+    authorInput.value = book.author;
+    pagesInput.value = book.pages;
+    statusInput.value = book.status ? "Read" : "Not read";
+
+
+    popUp.classList.add("active");
+    popUp.classList.add("blur");
+    container.style.display = "none";
+
+    editIndex = index;
+
+    addButton.textContent = "Save Changes";
+
+}
 
 
 window.addEventListener("scroll", function () {

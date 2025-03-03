@@ -168,9 +168,9 @@ fieldset select {
 
 .book-card {
   background-color: rgba(255, 255, 255, 0.842);
-  border: 2px solid white;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 20px;
-  box-shadow: inset 0 0 0 10px white;
+  box-shadow: inset 0 0 0 10px rgb(0, 0, 0);
   animation: borderCol 5s linear 500ms infinite alternate forwards;
   transition: box-shadow;
   padding: 2em;
@@ -203,19 +203,14 @@ fieldset select {
 
 
 @keyframes borderCol {
-  25% {
-    box-shadow: inset 0 0 0 10px rgb(97, 89, 89);
-    border: 2px solid rgb(97, 89, 89);
-  }
-
-  50% {
-    box-shadow: inset 0 0 0 10px #996600;
-    border: 2px solid #996600;
-  }
-
-  100% {
+  25%, 75% {
     box-shadow: inset 0 0 0 10px black;
     border: 2px solid black;
+  }
+
+  50%, 100% {
+    box-shadow: inset 0 0 0 10px #996600;
+    border: 2px solid #996600;
   }
 }
 
@@ -257,8 +252,9 @@ fieldset select {
 
   .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 0 1.5em;
+    width: 90%;
   }
 
   .book-card {
