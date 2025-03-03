@@ -192,24 +192,15 @@ fieldset select {
 .book-card .del-cont {
   display: flex;
   justify-content: end;
+  gap: .5em;
+  font-size: 2em;
 }
 
-.book-card .del-btn {
-  font-size: 1em;
-  padding: 0.5em 1.5em;
-  background-color: white;
-  font-weight: 600;
-  border: 3px solid #996600;
-  color: black;
-  border-radius: 0.5em;
+.icon{
+ color: black;
+ cursor: pointer;
 }
 
-.del-btn:hover {
-  background-color: #996600;
-  color: white;
-  border: 3px solid white;
-  cursor: pointer;
-}
 
 @keyframes borderCol {
   25% {

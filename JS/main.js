@@ -56,26 +56,29 @@ const displayBook = () => {
         const pages = document.createElement("p");
         const status = document.createElement("p");
         const delCont = document.createElement('div')
-        const delbtn = document.createElement('button')
+        const del = document.createElement('i')
+        const edit = document.createElement('i')
 
         card.classList.add('book-card')
         delCont.classList.add('del-cont')
-        delbtn.classList.add('del-btn')
+        del.classList.add("fa", "fa-trash", "icon");
+        edit.classList.add("fa", "fa-pencil-square-o", "icon");
 
 
         title.textContent = `Title: ${myLibrary[i].title}`
         author.textContent = `Author: ${myLibrary[i].author}`;
         pages.textContent = `Pages: ${myLibrary[i].pages}`;
         status.textContent = `Status: ${myLibrary[i].status ? 'Read' : 'Not Read'}`;
-        delbtn.textContent = "Delete";
 
-        delbtn.addEventListener('click', () => {
+        del.addEventListener('click', () => {
             myLibrary.splice(i,1);
             displayBook();
         });
 
 
-        delCont.appendChild(delbtn)
+        delCont.appendChild(edit);
+        delCont.appendChild(del);
+        
 
         card.appendChild(title);
         card.appendChild(author);
